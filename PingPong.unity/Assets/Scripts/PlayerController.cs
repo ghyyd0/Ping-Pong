@@ -10,6 +10,6 @@ public class PlayerController : MonoBehaviour
     {
         float speed = 0.3f;
         float direction = Input.GetAxis("Horizontal") * speed;
-        transform.Translate(direction, 0, 0);
+        transform.Translate(0, 0, -direction);
     }
 }
