@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class AiPlayerController : MonoBehaviour
 {
-   
+    [SerializeField] GameObject ball;
+
     // Update is called once per frame
     void Update()
     {
-        GameObject ball = GameObject.Find("Sphere");
-        float xPosition = ball.transform.position.x;
+        ball = GameObject.Find("Ball");
+        float xPosition = transform.position.x;
         float yPosition = transform.position.y;
-        float zPosition = transform.position.z;
+        float zPosition = ball.transform.position.z;
         transform.position = new Vector3(xPosition, yPosition, zPosition);
 
     }
