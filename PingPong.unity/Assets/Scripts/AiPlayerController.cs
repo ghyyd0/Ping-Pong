@@ -14,8 +14,9 @@ public class AiPlayerController : MonoBehaviour
         float yPosition = transform.position.y;
         float zPosition = ball.transform.position.z;
         transform.position = new Vector3(xPosition, yPosition, zPosition);
-        Vector3 A = transform.position - new Vector3(0, 0, 2);
-        Vector3 B = transform.position + new Vector3(0, 0, 2);
+        var level = 11 - GameStates.playerScore;
+        Vector3 A = transform.position - new Vector3(0, 0, level);
+        Vector3 B = transform.position + new Vector3(0, 0, level);
         float randTime = Mathf.Sin(Time.time);
         transform.position = Vector3.Lerp(A, B, randTime);
 

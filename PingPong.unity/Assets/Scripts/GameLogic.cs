@@ -13,12 +13,17 @@ public class GameLogic : MonoBehaviour
         }
         else
         {
-            GameStates.playerScore++;
+            GameStates.npcScore++;
         }
         Debug.Log(GameStates.playerScore + ":" + GameStates.npcScore);
 
 
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+    }
+    private void Update()
+    {
+        if (GameStates.npcScore > 10 || GameStates.playerScore > 10)
+            SceneManager.LoadScene("Finish");
     }
 }
