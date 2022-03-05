@@ -20,6 +20,7 @@ public class PlayerForce : MonoBehaviour
         Vector3 forceDirection = table.transform.position - transform.position;
         float forceValue = 3;
         collision.gameObject.GetComponent<Rigidbody>().AddForce(forceDirection * forceValue, ForceMode.Impulse);
+        collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.right * Random.Range(-1, 1), ForceMode.Impulse);
     }
     
 }

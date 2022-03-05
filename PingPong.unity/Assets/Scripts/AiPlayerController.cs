@@ -14,6 +14,11 @@ public class AiPlayerController : MonoBehaviour
         float yPosition = transform.position.y;
         float zPosition = ball.transform.position.z;
         transform.position = new Vector3(xPosition, yPosition, zPosition);
+        Vector3 A = transform.position - new Vector3(0, 0, 2);
+        Vector3 B = transform.position + new Vector3(0, 0, 2);
+        float randTime = Mathf.Sin(Time.time);
+        transform.position = Vector3.Lerp(A, B, randTime);
+
 
     }
 }
